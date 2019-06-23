@@ -4,9 +4,18 @@
 
 package org.libraryweasel
 
+import com.google.inject.AbstractModule
+import com.google.inject.Guice
 import org.libraryweasel.web.Server
 
 fun main() {
-    val server = Server()
+    val injector = Guice.createInjector(LibraryWeaselModule())
+    val server = injector.getInstance(Server::class.java)
     server.start()
+}
+
+class LibraryWeaselModule : AbstractModule() {
+    override fun configure() {
+        bind(Server::class.java)
+    }
 }

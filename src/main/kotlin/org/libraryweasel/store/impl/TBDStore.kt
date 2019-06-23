@@ -2,14 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-package org.libraryweasel.web
+package org.libraryweasel.store.impl
 
-import com.google.inject.Inject
-import com.google.inject.Singleton
+import org.libraryweasel.store.LocalTripleStore
 
-@Singleton
-class Server @Inject constructor() {
-    fun start() {
+class TBDStore : LocalTripleStore {
 
-    }
 }

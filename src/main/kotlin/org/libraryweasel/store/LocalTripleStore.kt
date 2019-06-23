@@ -4,3 +4,6 @@
 
 package org.libraryweasel.store
 
+interface LocalTripleStore {
+
+}
