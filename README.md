@@ -1,2 +1,2 @@
-# library-weasel
+# ligatureLab
 A breadboard for linked data.
