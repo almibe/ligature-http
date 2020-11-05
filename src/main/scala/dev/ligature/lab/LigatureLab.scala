@@ -3,3 +3,9 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 package dev.ligature.lab
+
+import cats.effect.{ExitCode, IO, IOApp}
+
+object LigatureLab extends IOApp {
+  override def run(args: List[String]): IO[ExitCode] = ???
+}

@@ -10,8 +10,8 @@ resolvers += Resolver.mavenLocal
 lazy val root = (project in file("."))
   .settings(
     name := "ligature-lab",
-    libraryDependencies += "dev.ligature" %% "ligature-in-memory" % "0.1.0-SNAPSHOT",
-    libraryDependencies += "io.vertx" % "vertx-web" % "3.9.3",
-    libraryDependencies += "org.scalameta" %% "munit" % "0.7.12" % Test,
+    libraryDependencies += "dev.ligature" %% "ligature-mock" % "0.1.0-SNAPSHOT",
+    libraryDependencies += "io.vertx" % "vertx-web" % "3.9.4",
+    libraryDependencies += "org.scalameta" %% "munit" % "0.7.16" % Test,
     testFrameworks += new TestFramework("munit.Framework")
   )
