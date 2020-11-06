@@ -12,6 +12,7 @@ That said, this document will be kept up to date with the current api that is im
 This project requires SBT to be installed.
 On Linux/Mac I recommend using https://sdkman.io/ to manage SBT installs.
 Once that is set up use `sbt test` to run tests `sbt run` to run the server.
+Ligature requires that an auth mode argument be passed at start up, see list below.
 
 ## Auth Modes
 Ligature plans to support multiple auth modes.
@@ -30,15 +31,38 @@ These are not set in stone by any means and all will likely change.
 
 ### Create Collection
 
+PUT to ligature/collectionName
+Returns 201 if new collection is created
+Returns 200 if the collection already existed
+Returns 401 if user can't create resource
+TODO other possible error codes
+
 ### List Collections
+
+GET to ligature/_collections
+TODO return values
 
 ### Delete Collection
 
+DELETE to ligature/collectionName
+TODO return values
+
 ### Add Statement
+
+POST to ligature/collectionName
+TODO return values + bodies
 
 ### Get All Statements
 
+GET to ligature/collectionName
+TODO return values
+
 ### Remove Statement
+
+DELETE to ligature/collectionName
+TODO return values + bodies
 
 ### Query Statements
 
+GET to ligature/collectionName
+TODO return values + bodies
