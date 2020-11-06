@@ -1,7 +1,5 @@
-# ligatureLab
-*A breadboard for linked data.*
-
-LigatureLab is a web application that helps users work with Ligature's data model.
+# ligature-server
+An HTTP server for working with Ligature.
 
 ## Note
 This project is very new and very much under development and design.
