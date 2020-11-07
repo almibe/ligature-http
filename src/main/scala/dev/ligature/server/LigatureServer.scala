@@ -12,18 +12,76 @@ import io.vertx.ext.web.Router
 
 object LigatureServer extends IOApp {
   override def run(args: List[String]): IO[ExitCode] =
-     LigatureMock.instance.use { store =>
-       IO {
-         setupServer(store)
-       }
+    LigatureMock.instance.use { store =>
+      IO {
+        val authType = Auth.readAuthType(args)
+        setupServer(authType, store)
+      }
     }.as(ExitCode.Success)
 
-  private def setupServer(ligatureInstance: LigatureInstance): Unit = {
-    ligatureInstance.hashCode()
+  private def setupServer(authTypes: Set[Auth.AuthType], ligatureInstance: LigatureInstance): Unit = {
+    if (authTypes.isEmpty) {
+      throw new RuntimeException(s"Must pass auth type.\n\t${Auth.localDevNoAuth}\n\t${Auth.basicAuth}\n\t${Auth.jwtAuth}")
+    }
+
     val vertx = Vertx.factory.vertx()
     val server = vertx.createHttpServer()
     val router = Router.router(vertx)
-    //TODO setup router
+
+    //get all collections
+    router.get("/").handler { ctx =>
+      ligatureInstance.read.use { tx =>
+        IO {
+          tx.collections
+        }
+      }.unsafeRunAsync { cb =>
+        ctx.response().end("")
+        ???
+      }
+    }
+
+    //add collection
+    router.put("/*").handler { ctx =>
+      ligatureInstance.write.use { tx =>
+        ???
+      }
+    }
+
+    //delete collection
+    router.delete("/*").handler { ctx =>
+      ligatureInstance.write.use { tx =>
+        ???
+      }
+    }
+
+    //add statements
+    router.post("/*").handler { ctx =>
+      ligatureInstance.write.use { tx =>
+        ???
+      }
+    }
+
+    //delete statements
+    router.delete("/*").handler { ctx =>
+      ligatureInstance.write.use { tx =>
+        ???
+      }
+    }
+
+    //get all statements
+    router.get("/*").handler { ctx =>
+      ligatureInstance.read.use { tx =>
+        ???
+      }
+    }
+
+    //query statements
+    router.get("/*").handler { ctx =>
+      ligatureInstance.read.use { tx =>
+        ???
+      }
+    }
+
     server.requestHandler(router).listen(8080)
     ()
   }
