@@ -6,6 +6,10 @@ This project is very new and very much under development and design.
 For now assume that all apis are temporary and will change in the future.
 That said, this document will be kept up to date with the current api that is implemented.
 
+## Testing
+Note that this project doesn't contain any tests.
+This project is developed in lock step with (ligature-client)[https://github.com/almibe/ligature-client] and tests for this project are 
+
 ## Running
 This project requires SBT to be installed.
 On Linux/Mac I recommend using https://sdkman.io/ to manage SBT installs.

@@ -1,5 +1,11 @@
 target/
-
-# Ignore Gradle build output directory
-build
 .idea
+_site
+.dotty-ide-artifact
+.dotty-ide.json
+.metals/
+.vscode/
+project/metals.sbt
+project/project/
+.bloop/
+.bsp/

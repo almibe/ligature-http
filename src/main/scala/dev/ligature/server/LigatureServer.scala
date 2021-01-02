@@ -21,7 +21,10 @@ object LigatureServer extends IOApp {
 
   private def setupServer(authTypes: Set[Auth.AuthType], ligatureInstance: LigatureInstance): Unit = {
     if (authTypes.isEmpty) {
-      throw new RuntimeException(s"Must pass auth type.\n\t${Auth.localDevNoAuth}\n\t${Auth.basicAuth}\n\t${Auth.jwtAuth}")
+      throw new RuntimeException(s"Must pass auth type." +
+        s"\n\t${Auth.localDevNoAuth}" +
+        s"\n\t${Auth.basicAuth}" +
+        s"\n\t${Auth.jwtAuth}")
     }
 
     val vertx = Vertx.factory.vertx()
