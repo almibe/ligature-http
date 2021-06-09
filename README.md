@@ -1,5 +1,10 @@
-# ligature-server
+# ligature-http
 An HTTP server for working with Ligature.
+
+## Status
+This project isn't used anymore.
+See https://github.com/almibe/ligature or
+https://github.com/almibe/ligature-jvm for updated projects.
 
 ## Note
 This project is very new and very much under development and design.
@@ -11,10 +16,7 @@ Note that this project doesn't contain any tests.
 This project is developed in lock step with (ligature-client)[https://github.com/almibe/ligature-client] and tests for this project are 
 
 ## Running
-This project requires SBT to be installed.
-On Linux/Mac I recommend using https://sdkman.io/ to manage SBT installs.
-Once that is set up use `sbt test` to run tests `sbt run` to run the server.
-Ligature requires that an auth mode argument be passed at start up, see list below.
+TODO
 
 ## Auth Modes
 Ligature plans to support multiple auth modes.
